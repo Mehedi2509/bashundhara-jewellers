@@ -1,0 +1,24 @@
+.logo{
+display: flex;
+align-items: center;
+}
+.logo img{
+    width: 50px;
+    border-radius: 30% 40%;
+    margin-right: 10px;
+}
+.menu{
+    text-decoration: none;
+    color:white;
+    padding: 5px 20px;
+    font-weight: 600;
+}
+.menu:hover{
+    background-color: rgb(184, 211, 64);
+    color: rgb(119, 3, 3);
+    border-radius: 10px 30px;
+}
+.user-img{
+    width: 35px;
+    border-radius: 50%;
+}
