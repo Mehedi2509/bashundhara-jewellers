@@ -1,10 +1,11 @@
 import React from 'react';
 import HomeProducts from '../HomeProducts/HomeProducts';
+import SliderSection from '../SliderSection/SliderSection';
 
 const Home = () => {
     return (
         <div>
-            <h1>This is home</h1>
+            <SliderSection />
             <HomeProducts></HomeProducts>
         </div>
     );

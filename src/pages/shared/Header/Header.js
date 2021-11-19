@@ -1,6 +1,5 @@
 import React from 'react';
 import './Header.css';
-import { Typography } from '@mui/material';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../../../images/logo.jpg';
@@ -10,12 +9,12 @@ const Header = () => {
     const { logOut, user } = useAuth();
     console.log(user)
     return (
-        <div>
+        <div className="header">
             <Navbar expand="lg">
                 <Container fluid>
                     <Navbar.Brand className="logo" href="#">
                         <img width="50px" src={logo} alt="" />
-                        <Typography sx={{ fontWeight: '700', color: 'rgb(184, 211, 64)' }} variant="h4">BASHUNDHARA JEWELLERS</Typography>
+                        <h2 className="logo-h2">BASHUNDHARA JEWELLERS</h2>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
 
@@ -26,8 +25,9 @@ const Header = () => {
                             navbarScroll
                         >
                             <div>
-                                <Link a className="menu" to="home">HOME</Link>
-                                <Link a className="menu" to="shop">SHOP</Link>
+                                <Link a className="menu" to="/home">HOME</Link>
+                                <Link a className="menu" to="/shop">SHOP</Link>
+                                <Link a className="menu" to="/about">ABOUT</Link>
                                 {user?.email
                                     &&
                                     <a>

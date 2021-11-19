@@ -1,0 +1,15 @@
+.product{
+    background-image: linear-gradient(to right,rgb(137, 158, 97),rgb(163, 107, 107));
+    padding: 20px;
+    border-radius: 20px;
+}
+.cart-btn{
+    border: 0;
+    border-radius: 10px;
+    padding: 7px 20px;
+    background-color: rgb(46, 35, 37);
+    color: white;
+}
+.product-img{
+   width: 100%;
+}

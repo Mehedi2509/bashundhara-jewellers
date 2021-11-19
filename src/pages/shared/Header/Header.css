@@ -1,6 +1,14 @@
+.header{
+    background-color: gray;
+    padding: 5px 30px;
+}
 .logo{
 display: flex;
 align-items: center;
+}
+.logo-h2{
+     font-weight: 700;
+      color: rgb(184, 211, 64);
 }
 .logo img{
     width: 50px;
@@ -21,4 +29,15 @@ align-items: center;
 .user-img{
     width: 35px;
     border-radius: 50%;
+}
+@media only screen and (max-width:668px) {
+    .header{
+        padding: 5px 0;
+    }
+    .logo-h2{
+        font-size: 16px;
+    }
+    .logo img{
+        width: 40px;
+    }
 }

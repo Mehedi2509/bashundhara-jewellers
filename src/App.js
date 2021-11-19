@@ -10,6 +10,7 @@ import SignIn from './pages/Login/SignIn/SignIn';
 import SignUp from './pages/Login/SignUp/SignUp';
 import NotFound from './pages/NotFound/NotFound';
 import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
+import Footer from './pages/shared/Footer/Footer';
 import Header from './pages/shared/Header/Header';
 import Shop from './pages/Shop/Shop';
 
@@ -51,6 +52,7 @@ function App() {
               <NotFound></NotFound>
             </Route>
           </Switch>
+          <Footer></Footer>
         </Router>
       </AuthProvider>
     </div>

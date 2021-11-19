@@ -1,0 +1,14 @@
+.home-products{
+    width: 90%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 40px 50px;
+}
+
+@media only screen and (max-width:668px) {
+    .home-products{
+        width: 90%;
+        grid-template-columns: 1fr;
+    }
+}
