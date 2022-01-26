@@ -1,6 +1,7 @@
 import React from 'react';
 import useProducts from '../../../hooks/useProducts';
-import HomeProduct from '../HomeProduct/HomeProduct';
+import Product from '../Product/Product';
+
 import './HomeProducts.css';
 
 const HomeProducts = () => {
@@ -8,10 +9,10 @@ const HomeProducts = () => {
     console.log(products)
     return (
         <div>
-            <h1 className="text-white text-center mt-5">Our Products</h1>
+            <h1 className="text-white text-center mt-5">OUR PRODUCTS</h1>
 
             <div className="home-products">
-                {products?.slice(0, 11)?.map(product => <HomeProduct key={product._id} product={product}></HomeProduct>)}
+                {products?.slice(0, 8)?.map(product => <Product key={product._id} product={product}></Product>)}
             </div>
         </div>
     );

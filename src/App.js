@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import About from './pages/About/About';
 import AuthProvider from './pages/Context/AuthProvider/AuthProvider';
-import Dashboard from './pages/Dashboard/Dashboard';
+import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import Diamond from './pages/Diamond/Diamond';
 import Gold from './pages/Gold/Gold';
 import Home from './pages/Home/Home/Home';

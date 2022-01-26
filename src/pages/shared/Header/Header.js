@@ -36,10 +36,10 @@ const Header = () => {
                                         <Link className="menu" to="diamond">DIAMOND</Link></a>}
                             </div>
                             <div>
-                                <NavDropdown title={user?.email ? <img className="user-img" src={user.photoURL} alt="" /> : <i style={{ fontSize: '30px', color: 'white', marginLeft: '10px' }} className="fas fa-user-circle"></i>} id="navbarScrollingDropdown">
-                                    {!user?.email ? <NavDropdown.Item>Sign In</NavDropdown.Item> :
+                                <NavDropdown title={user?.photoURL ? <img className="user-img" src={user.photoURL} alt="" /> : <i style={{ fontSize: '30px', color: 'white', marginLeft: '10px' }} className="fas fa-user-circle"></i>} id="navbarScrollingDropdown">
+                                    {!user?.email ? <NavDropdown.Item><Link to="/signIn">Sign In</Link></NavDropdown.Item> :
                                         <div>
-                                            <img src={user?.imgURL} alt="" />
+                                            <img src={user?.photoURL} alt="" />
                                             <p>{user.displayName}</p>
                                             <NavDropdown.Divider />
                                             <NavDropdown.Item >Profile</NavDropdown.Item>

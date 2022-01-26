@@ -10,5 +10,6 @@
     .home-products{
         width: 90%;
         grid-template-columns: 1fr;
+        /* background-image: linear-gradient(to left,rgb(205, 243, 234),rgb(241, 217, 217)); */
     }
 }
