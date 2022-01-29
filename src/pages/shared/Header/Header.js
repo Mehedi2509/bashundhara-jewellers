@@ -4,17 +4,25 @@ import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../../../images/logo.jpg';
 import useAuth from '../../../hooks/useAuth';
+import { useHistory } from 'react-router-dom';
 
 const Header = () => {
     const { logOut, user } = useAuth();
     console.log(user)
+    const history = useHistory();
+
+    const clickToHomePage = e => {
+        e.preventDefault();
+        history.push('/home');
+    }
+
     return (
         <div className="header">
             <Navbar expand="lg">
                 <Container fluid>
                     <Navbar.Brand className="logo" href="#">
-                        <img width="50px" src={logo} alt="" />
-                        <h2 className="logo-h2">BASHUNDHARA JEWELLERS</h2>
+                        <img onClick={clickToHomePage} width="50px" src={logo} alt="" />
+                        <h2 className="logo-h2" onClick={clickToHomePage}>BASHUNDHARA JEWELLERS</h2>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
 
@@ -25,15 +33,16 @@ const Header = () => {
                             navbarScroll
                         >
                             <div>
-                                <Link a className="menu" to="/home">HOME</Link>
                                 <Link a className="menu" to="/shop">SHOP</Link>
                                 <Link a className="menu" to="/about">ABOUT</Link>
-                                {user?.email
-                                    &&
+
+                                {user?.email &&
                                     <a>
                                         <Link a className="menu" to="dashboard">DASHBOARD</Link>
                                         <Link className="menu" to="gold">GOLD</Link>
-                                        <Link className="menu" to="diamond">DIAMOND</Link></a>}
+                                        <Link className="menu" to="diamond">DIAMOND</Link>
+                                    </a>
+                                }
                             </div>
                             <div>
                                 <NavDropdown title={user?.photoURL ? <img className="user-img" src={user.photoURL} alt="" /> : <i style={{ fontSize: '30px', color: 'white', marginLeft: '10px' }} className="fas fa-user-circle"></i>} id="navbarScrollingDropdown">

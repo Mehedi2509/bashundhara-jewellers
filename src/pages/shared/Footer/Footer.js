@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <div className="footer-section">
-            <div className="row">
+        <div className="">
+            <div className="row footer-section">
                 <div className="col-12 col-lg-5">
                     <div className="footer-logo">
                         <img src={logo} alt="" />
@@ -41,7 +41,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <p style={{ textAlign: 'center', paddingTop: '30px' }}><small>Copyright © 2021 bashundhara_jewellers.com</small></p>
+            <p style={{ textAlign: 'center', color: 'whiteSmoke', padding: '15px', backgroundColor: 'black', margin: '0' }}><small>Copyright © 2021 bashundhara_jewellers.com</small></p>
         </div>
     );
 };

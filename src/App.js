@@ -12,47 +12,64 @@ import NotFound from './pages/NotFound/NotFound';
 import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 import Footer from './pages/shared/Footer/Footer';
 import Header from './pages/shared/Header/Header';
-import Shop from './pages/Shop/Shop';
+import Shop from './pages/Shop/Shop/Shop';
 
 function App() {
   return (
     <div className="App">
       <AuthProvider>
         <Router>
-          <Header />
           <Switch>
             <Route exact path="/">
+              <Header />
               <Home></Home>
+              <Footer />
             </Route>
             <Route path="/home">
+              <Header />
               <Home></Home>
+              <Footer />
             </Route>
             <PrivateRoute path="/shop">
+              <Header />
               <Shop></Shop>
+              <Footer />
             </PrivateRoute>
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
+              <Footer></Footer>
             </PrivateRoute>
             <Route path="/gold">
+              <Header />
               <Gold></Gold>
+              <Footer />
             </Route>
             <Route path="/diamond">
+              <Header />
               <Diamond></Diamond>
+              <Footer />
             </Route>
             <Route path="/about">
+              <Header />
               <About></About>
+              <Footer />
             </Route>
             <Route path="/signIn">
+              <Header />
               <SignIn></SignIn>
+              <Footer />
             </Route>
             <Route path="/signUp">
+              <Header />
               <SignUp></SignUp>
+              <Footer />
             </Route>
             <Route path="*">
+              <Header />
               <NotFound></NotFound>
+              <Footer />
             </Route>
           </Switch>
-          <Footer></Footer>
         </Router>
       </AuthProvider>
     </div>

@@ -11,7 +11,7 @@ const Product = ({ product }) => {
             </div>
             <div>
                 <h3>{name}</h3>
-                <p>{description}</p>
+                <p style={{ textAlign: 'justify' }}>{description}</p>
                 <hr />
                 <div className="d-flex align-items-center justify-content-between">
                     <p>Category: {category}</p>
@@ -20,7 +20,7 @@ const Product = ({ product }) => {
                 <hr />
                 <div className="d-flex align-items-center justify-content-between">
                     <h2>$ {price}</h2>
-                    <button className="cart-btn">Add To Cart</button>
+                    <button className="cart-btn">Book Now</button>
                 </div>
             </div>
         </div>

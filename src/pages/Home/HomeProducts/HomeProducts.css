@@ -13,3 +13,10 @@
         /* background-image: linear-gradient(to left,rgb(205, 243, 234),rgb(241, 217, 217)); */
     }
 }
+@media only screen and (min-width:689px) and (max-width:920px) {
+    .home-products{
+        width: 90%;
+        grid-template-columns: 1fr 1fr;
+        /* background-image: linear-gradient(to left,rgb(205, 243, 234),rgb(241, 217, 217)); */
+    }
+}

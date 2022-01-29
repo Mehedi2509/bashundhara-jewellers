@@ -1,6 +1,6 @@
 import React from 'react';
-import useProducts from '../../hooks/useProducts';
-import Product from '../Home/Product/Product';
+import useProducts from '../../../hooks/useProducts';
+import Product from '../../Home/Product/Product';
 
 
 const Shop = () => {
