@@ -3,8 +3,10 @@ import './Header.css';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../../../images/logo.jpg';
+import userImg from '../../../images/user-blank.png';
 import useAuth from '../../../hooks/useAuth';
 import { useHistory } from 'react-router-dom';
+import { Box } from '@mui/material';
 
 const Header = () => {
     const { logOut, user } = useAuth();
@@ -34,8 +36,6 @@ const Header = () => {
                         >
                             <div>
                                 <Link a className="menu" to="/shop">SHOP</Link>
-                                <Link a className="menu" to="/about">ABOUT</Link>
-
                                 {user?.email &&
                                     <a>
                                         <Link a className="menu" to="dashboard">DASHBOARD</Link>
@@ -43,18 +43,20 @@ const Header = () => {
                                         <Link className="menu" to="diamond">DIAMOND</Link>
                                     </a>
                                 }
+                                <Link a className="menu" to="/about">ABOUT</Link>
                             </div>
-                            <div>
-                                <NavDropdown title={user?.photoURL ? <img className="user-img" src={user.photoURL} alt="" /> : <i style={{ fontSize: '30px', color: 'white', marginLeft: '10px' }} className="fas fa-user-circle"></i>} id="navbarScrollingDropdown">
-                                    {!user?.email ? <NavDropdown.Item><Link to="/signIn">Sign In</Link></NavDropdown.Item> :
-                                        <div>
-                                            <img src={user?.photoURL} alt="" />
-                                            <p>{user.displayName}</p>
+                            <div style={{ textAlign: 'center', width: '120px' }}>
+                                <NavDropdown style={{ width: '150%' }} title={user?.photoURL ? <img className="user-img" src={user.photoURL} alt="" /> : <i style={{ fontSize: '30px', color: 'white', marginLeft: '10px' }} className="fas fa-user-circle"></i>} id="navbarScrollingDropdown">
+                                    {!user?.email ? <NavDropdown.Item style={{ textAlign: 'center' }}><Link style={{ textDecoration: 'none', color: 'black', textAlign: 'center' }} to="/signIn">Sign In</Link></NavDropdown.Item> :
+                                        <div style={{ textAlign: 'center' }}>
+                                            <div style={{}}>
+                                                <img style={{ borderRadius: '50%', width: '50px', height: '50px', margin: '10px' }} src={user?.photoURL} alt="" />
+                                                <p>{user.displayName}</p>
+                                            </div>
                                             <NavDropdown.Divider />
-                                            <NavDropdown.Item >Profile</NavDropdown.Item>
-                                            <NavDropdown.Item onClick={logOut}>
-                                                Sign Out
-                                            </NavDropdown.Item></div>}
+                                            <NavDropdown.Item >My Profile</NavDropdown.Item>
+                                            <NavDropdown.Item onClick={logOut}>Sign Out</NavDropdown.Item>
+                                        </div>}
                                 </NavDropdown>
                             </div>
                         </Nav>
