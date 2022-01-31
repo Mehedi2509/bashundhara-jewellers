@@ -14,12 +14,11 @@ import {
     useRouteMatch
 } from "react-router-dom";
 import { Button } from '@mui/material';
-import ManageBooking from '../ManageBooking/ManageBooking';
+import MyBookings from '../MyBookings/MyBookings';
 import SendReview from '../SendReview/SendReview';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AddProduct from '../AddProduct/AddProduct';
 import useAuth from '../../../hooks/useAuth';
-import Footer from '../../shared/Footer/Footer';
 
 const drawerWidth = 240;
 const activeStyle = { border: '2px solid whitesmoke', borderRadius: '20px', padding: '10px 10px' };
@@ -124,7 +123,7 @@ const Dashboard = (props) => {
                 <Toolbar />
                 <Switch>
                     <Route exact path={`${path}`}>
-                        <ManageBooking></ManageBooking>
+                        <MyBookings></MyBookings>
                     </Route>
                     <Route path={`${path}/sendYourReview`}>
                         <SendReview></SendReview>

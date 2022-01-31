@@ -4,11 +4,28 @@ const SendReview = () => {
     const [review, setReview] = useState({});
 
     const handleOnBlur = e => {
-
+        const field = e.target.name;
+        const value = e.target.value;
+        const newReview = { ...review };
+        newReview[field] = value;
+        setReview(newReview);
     };
 
     const handleSubmitReview = e => {
         e.preventDefault();
+        fetch('http://localhost:4000/reviews', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(review)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    alert('Send you review successfully');
+                }
+            })
     };
     return (
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '80px' }}>

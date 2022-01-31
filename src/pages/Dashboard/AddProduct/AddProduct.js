@@ -1,14 +1,33 @@
 import React, { useState } from 'react';
 
 const AddProduct = () => {
-    const [productData, setPorductData] = useState({});
+    const [productData, setProductData] = useState({});
 
     const handleOnBlur = e => {
-
+        const field = e.target.name;
+        const value = e.target.value;
+        const newProductData = { ...productData };
+        newProductData[field] = value;
+        setProductData(newProductData);
     };
 
     const handlePostProduct = e => {
         e.preventDefault();
+
+        fetch('http://localhost:4000/products', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(productData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    alert('Post successfully');
+                }
+            })
     };
 
     return (

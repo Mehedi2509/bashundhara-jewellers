@@ -1,8 +1,15 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import './Product.css';
 
 const Product = ({ product }) => {
-    const { name, img, description, price, category, material } = product;
+    const { _id, name, img, description, price, category, material } = product;
+    const history = useHistory();
+
+    const handleBookNow = e => {
+        e.preventDefault();
+        history.push(`/booking/${_id}`);
+    }
 
     return (
         <div className="text-white product">
@@ -20,7 +27,7 @@ const Product = ({ product }) => {
                 <hr />
                 <div className="d-flex align-items-center justify-content-between">
                     <h2>$ {price}</h2>
-                    <button className="cart-btn">Book Now</button>
+                    <button onClick={handleBookNow} className="cart-btn">Book Now</button>
                 </div>
             </div>
         </div>

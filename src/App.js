@@ -12,6 +12,7 @@ import NotFound from './pages/NotFound/NotFound';
 import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 import Footer from './pages/shared/Footer/Footer';
 import Header from './pages/shared/Header/Header';
+import Booking from './pages/Shop/Booking/Booking';
 import Shop from './pages/Shop/Shop/Shop';
 
 function App() {
@@ -35,9 +36,13 @@ function App() {
               <Shop></Shop>
               <Footer />
             </PrivateRoute>
+            <PrivateRoute path="/booking/:id">
+              <Header />
+              <Booking></Booking>
+              <Footer />
+            </PrivateRoute>
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
-              <Footer></Footer>
             </PrivateRoute>
             <Route path="/gold">
               <Header />
