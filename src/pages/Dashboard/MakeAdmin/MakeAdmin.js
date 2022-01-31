@@ -9,7 +9,17 @@ const MakeAdmin = () => {
 
     const handleMakeAdmin = e => {
         e.preventDefault();
-        console.log(adminEmail);
+        const user = { email: adminEmail };
+
+        fetch('https://pure-refuge-11056.herokuapp.com/users/admin', {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => console.log(data))
     };
 
     return (

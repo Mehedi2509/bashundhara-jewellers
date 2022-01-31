@@ -13,7 +13,7 @@ const SendReview = () => {
 
     const handleSubmitReview = e => {
         e.preventDefault();
-        fetch('http://localhost:4000/reviews', {
+        fetch('https://pure-refuge-11056.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

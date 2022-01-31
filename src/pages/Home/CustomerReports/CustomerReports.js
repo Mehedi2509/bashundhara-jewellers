@@ -14,7 +14,7 @@ const CustomerReports = () => {
     const handleSubmitReport = e => {
         e.preventDefault();
 
-        fetch('http://localhost:4000/reports', {
+        fetch('https://pure-refuge-11056.herokuapp.com/reports', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

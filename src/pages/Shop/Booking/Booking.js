@@ -11,17 +11,18 @@ const Booking = () => {
     const [product, setProduct] = useState({});
     const [orderData, setOrderData] = useState({});
     const id = useParams().id;
-    const url = `http://localhost:4000/products/${id}`;
+    const url = `https://pure-refuge-11056.herokuapp.com/products/${id}`;
     const history = useHistory();
 
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
-    }, []);
+    }, [url]);
 
     const { name, img, description, category, material, price } = product;
 
+    // pre-order
     const handleOnBlur = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -48,7 +49,7 @@ const Booking = () => {
             productMaterial: material,
         }
 
-        fetch('http://localhost:4000/orders', {
+        fetch('https://pure-refuge-11056.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

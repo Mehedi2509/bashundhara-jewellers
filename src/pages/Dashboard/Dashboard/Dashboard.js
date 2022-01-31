@@ -26,7 +26,7 @@ const activeStyle = { border: '2px solid whitesmoke', borderRadius: '20px', padd
 const Dashboard = (props) => {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-    const { user } = useAuth();
+    const { user, admin } = useAuth();
 
     let { path, url } = useRouteMatch();
 
@@ -47,9 +47,11 @@ const Dashboard = (props) => {
                 <br />
                 <NavLink activeStyle={activeStyle} style={{ textDecoration: 'none' }} to={`${url}/sendYourReview`}><Button style={{ color: 'rgb(224, 224, 224)', margin: '5px', fontWeight: '700' }}>Send Review</Button></NavLink>
                 <br />
-                <NavLink activeStyle={activeStyle} style={{ textDecoration: 'none' }} to={`${url}/makeAdmin`}><Button style={{ color: 'rgb(224, 224, 224)', margin: '5px', fontWeight: '700' }}>Make Admin</Button></NavLink>
-                <br />
-                <NavLink activeStyle={activeStyle} style={{ textDecoration: 'none' }} to={`${url}/addProduct`}><Button style={{ color: 'rgb(224, 224, 224)', margin: '5px', fontWeight: '700' }}>Add Product</Button></NavLink>
+                {admin && <Box>
+                    <NavLink activeStyle={activeStyle} style={{ textDecoration: 'none' }} to={`${url}/makeAdmin`}><Button style={{ color: 'rgb(224, 224, 224)', margin: '5px', fontWeight: '700' }}>Make Admin</Button></NavLink>
+                    <br />
+                    <NavLink activeStyle={activeStyle} style={{ textDecoration: 'none' }} to={`${url}/addProduct`}><Button style={{ color: 'rgb(224, 224, 224)', margin: '5px', fontWeight: '700' }}>Add Product</Button></NavLink>
+                </Box>}
             </div>
 
         </div>
@@ -79,8 +81,14 @@ const Dashboard = (props) => {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap component="div">
+                    <Typography sx={{ margin: '0 20px' }} variant="h6" noWrap component="div">
                         Dashboard
+                    </Typography>
+                    <Typography sx={{ margin: '0 20px' }} variant="h6" noWrap component="div">
+                        <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/home">Home</NavLink>
+                    </Typography>
+                    <Typography sx={{ margin: '0 20px' }} variant="h6" noWrap component="div">
+                        <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/shop">Shop</NavLink>
                     </Typography>
                 </Toolbar>
             </AppBar>

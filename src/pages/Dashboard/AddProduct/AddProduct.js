@@ -14,7 +14,7 @@ const AddProduct = () => {
     const handlePostProduct = e => {
         e.preventDefault();
 
-        fetch('http://localhost:4000/products', {
+        fetch('https://pure-refuge-11056.herokuapp.com/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

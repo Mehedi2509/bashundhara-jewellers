@@ -17,23 +17,21 @@ const useFirebase = () => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
-                setUser(result.user);
-                // saveUserData(email, name, 'POST');
                 setAuthError('');
-                const newUser = { email, displayName: displayName, photoURl: imgUrl };
-                setUser(newUser);
+                // const newUser = { email, displayName: displayName, photoURl: imgUrl };
+                // setUser(newUser);
+                saveUserData(email, displayName, 'POST');
                 updateProfile(auth.currentUser, { displayName: displayName, photoURL: imgUrl })
-                    .then(() => {
-
-                    }).catch(error => {
+                    .then(data => {
+                        setUser(data.user);
+                    })
+                    .catch(() => {
 
                     });
-                // Save user data
-
-                history.replace('/');
+                history.push('/');
             })
             .catch((error) => {
-                setAuthError(error.message);
+
             })
             .finally(() => setIsLoading(false));
     }
@@ -43,7 +41,7 @@ const useFirebase = () => {
         signInWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 setUser(result.user);
-                const destination = location?.from || '/';
+                const destination = location?.state?.from || '/';
                 history.replace(destination);
                 setAuthError('');
             })
@@ -51,7 +49,7 @@ const useFirebase = () => {
                 setAuthError(error.message);
             })
             .finally(() => setIsLoading(false));
-    }
+    };
 
     const signInWithGoogle = (location, history) => {
         setIsLoading(true);
@@ -61,9 +59,9 @@ const useFirebase = () => {
             .then(result => {
                 const user = result.user;
                 setUser(user);
-                // saveUserData(user.email, user.displayName, 'PUT')
-                const destination = location?.from || '/';
-                history.replace(destination);
+                saveUserData(user.email, user.displayName, 'PUT')
+                const destination = location?.state?.from || '/';
+                history.push(destination);
             })
             .catch((error) => {
 
@@ -86,12 +84,33 @@ const useFirebase = () => {
         return () => unsubscribe();
     }, [auth]);
 
+    useEffect(() => {
+
+        fetch(`https://pure-refuge-11056.herokuapp.com/users/${user?.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin))
+
+    }, [user?.email]);
+
     const logOut = () => {
         signOut(auth)
             .then(() => {
                 setUser({})
             })
-    }
+    };
+
+    const saveUserData = (email, displayName, method) => {
+        const user = { email, displayName };
+
+        fetch('https://pure-refuge-11056.herokuapp.com/users', {
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then()
+    };
 
     return {
         user,
