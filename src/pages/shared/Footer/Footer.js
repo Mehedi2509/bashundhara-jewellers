@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <div className="">
-            <div className="row footer-section">
+        <div>
+            <div className="row mx-auto footer-section">
                 <div className="col-12 col-lg-5">
                     <div className="footer-logo">
                         <img src={logo} alt="" />

@@ -13,7 +13,7 @@ const SendReview = () => {
 
     const handleSubmitReview = e => {
         e.preventDefault();
-        fetch('https://pure-refuge-11056.herokuapp.com/reviews', {
+        fetch('https://bashundhara-jewellers-server-mehedi2509.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

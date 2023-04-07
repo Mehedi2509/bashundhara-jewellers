@@ -5,7 +5,7 @@ const useProducts = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch(`https://pure-refuge-11056.herokuapp.com/products`)
+        fetch(`https://bashundhara-jewellers-server-mehedi2509.vercel.app/products`)
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])

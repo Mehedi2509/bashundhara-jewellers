@@ -86,7 +86,7 @@ const useFirebase = () => {
 
     useEffect(() => {
 
-        fetch(`https://pure-refuge-11056.herokuapp.com/users/${user?.email}`)
+        fetch(`https://bashundhara-jewellers-server-mehedi2509.vercel.app/users/${user?.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
 
@@ -102,7 +102,7 @@ const useFirebase = () => {
     const saveUserData = (email, displayName, method) => {
         const user = { email, displayName };
 
-        fetch('https://pure-refuge-11056.herokuapp.com/users', {
+        fetch('https://bashundhara-jewellers-server-mehedi2509.vercel.app/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'

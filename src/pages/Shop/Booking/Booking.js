@@ -11,7 +11,7 @@ const Booking = () => {
     const [product, setProduct] = useState({});
     const [orderData, setOrderData] = useState({});
     const id = useParams().id;
-    const url = `https://pure-refuge-11056.herokuapp.com/products/${id}`;
+    const url = `https://bashundhara-jewellers-server-mehedi2509.vercel.app/products/${id}`;
     const history = useHistory();
 
     useEffect(() => {
@@ -49,7 +49,7 @@ const Booking = () => {
             productMaterial: material,
         }
 
-        fetch('https://pure-refuge-11056.herokuapp.com/orders', {
+        fetch('https://bashundhara-jewellers-server-mehedi2509.vercel.app/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

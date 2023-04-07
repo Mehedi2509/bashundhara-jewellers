@@ -14,7 +14,7 @@ const CustomerReports = () => {
     const handleSubmitReport = e => {
         e.preventDefault();
 
-        fetch('https://pure-refuge-11056.herokuapp.com/reports', {
+        fetch('https://bashundhara-jewellers-server-mehedi2509.vercel.app/reports', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -34,9 +34,9 @@ const CustomerReports = () => {
     return (
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '80px', marginTop: '80px' }}>
             <div>
-                <div style={{ marginBottom: '50px' }}>
-                    <h2 style={{ color: 'whitesmoke', textAlign: 'center', fontWeight: '700' }}>CUSTOMER REPORTS</h2>
-                    <p style={{ textAlign: 'center', width: '30%', margin: '0 auto' }}><hr style={{ color: 'whitesmoke', padding: '3px', borderRadius: '5px', }} /></p>
+                <div style={{ marginBottom: '40px' }}>
+                    <h2 style={{ color: 'whiteSmoke', textAlign: 'center', fontWeight: '700' }}>CUSTOMER REPORTS</h2>
+                    <p style={{ textAlign: 'center', width: '50%', margin: '0 auto' }}><hr style={{ color: 'whiteSmoke', padding: '3px', borderRadius: '5px', }} /></p>
                 </div>
 
                 <div style={{ backgroundColor: 'white', padding: '50px', textAlign: 'center', borderRadius: '10px' }}>

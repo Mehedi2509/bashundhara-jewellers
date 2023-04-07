@@ -3,10 +3,8 @@ import './Header.css';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../../../images/logo.jpg';
-import userImg from '../../../images/user-blank.png';
 import useAuth from '../../../hooks/useAuth';
 import { useHistory } from 'react-router-dom';
-import { Box } from '@mui/material';
 
 const Header = () => {
     const { logOut, user } = useAuth();
@@ -43,8 +41,9 @@ const Header = () => {
                                         <Link className="menu" to="diamond">DIAMOND</Link>
                                     </a>
                                 }
-                                <Link a className="menu" to="/about">ABOUT</Link>
+                                <Link className="menu" to="/about">ABOUT</Link>
                             </div>
+
                             <div style={{ textAlign: 'center', width: '120px' }}>
                                 <NavDropdown style={{ width: '150%' }} title={user?.photoURL ? <img className="user-img" src={user.photoURL} alt="" /> : <i style={{ fontSize: '30px', color: 'white', marginLeft: '10px' }} className="fas fa-user-circle"></i>} id="navbarScrollingDropdown">
                                     {!user?.email ? <NavDropdown.Item style={{ textAlign: 'center' }}><Link style={{ textDecoration: 'none', color: 'black', textAlign: 'center' }} to="/signIn">Sign In</Link></NavDropdown.Item> :
@@ -59,6 +58,7 @@ const Header = () => {
                                         </div>}
                                 </NavDropdown>
                             </div>
+
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

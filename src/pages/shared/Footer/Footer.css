@@ -1,4 +1,5 @@
 .footer-section{
+    width: 100%;
     background-image: linear-gradient(to left,rgb(158, 168, 172),rgb(208, 214, 193));
     padding: 40px 0 30px 40px;
 }

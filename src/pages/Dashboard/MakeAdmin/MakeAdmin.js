@@ -11,7 +11,7 @@ const MakeAdmin = () => {
         e.preventDefault();
         const user = { email: adminEmail };
 
-        fetch('https://pure-refuge-11056.herokuapp.com/users/admin', {
+        fetch('https://bashundhara-jewellers-server-mehedi2509.vercel.app/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

@@ -9,7 +9,10 @@ const HomeProducts = () => {
     console.log(products)
     return (
         <div>
-            <h1 className="text-white text-center mt-5">OUR PRODUCTS</h1>
+            <div style={{ marginBottom: '40px', marginTop: '80px' }}>
+                <h2 style={{ color: 'whiteSmoke', textAlign: 'center', fontWeight: '700' }}>OUR PRODUCTS</h2>
+                <p style={{ textAlign: 'center', width: '15%', margin: '0 auto' }}><hr style={{ color: 'whiteSmoke', padding: '3px', borderRadius: '5px', }} /></p>
+            </div>
 
             <div className="home-products">
                 {products?.slice(0, 6)?.map(product => <Product key={product._id} product={product}></Product>)}

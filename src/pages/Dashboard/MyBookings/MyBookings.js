@@ -14,7 +14,7 @@ const MyBookings = () => {
     const { user } = useAuth();
 
     React.useEffect(() => {
-        const url = `https://pure-refuge-11056.herokuapp.com/orders?email=${user.email}`
+        const url = `https://bashundhara-jewellers-server-mehedi2509.vercel.app/orders?email=${user.email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setProducts(data))

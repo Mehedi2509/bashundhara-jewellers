@@ -14,7 +14,7 @@ const AddProduct = () => {
     const handlePostProduct = e => {
         e.preventDefault();
 
-        fetch('https://pure-refuge-11056.herokuapp.com/products', {
+        fetch('https://bashundhara-jewellers-server-mehedi2509.vercel.app/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
